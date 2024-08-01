@@ -2,8 +2,8 @@ import React from 'react'
 
 function DocumentationPage () {
   return (
-    <div className='documentation-page'>
-      <h1>Documentación</h1>
+    <div className='bg-white dark:bg-gray-900 text-black dark:text-white'>
+      <h1 className='text-center rainbow__text'>Que miras</h1>
 
       <section>
         <h2>Introducción</h2>

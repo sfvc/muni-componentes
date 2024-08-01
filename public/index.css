@@ -1,4 +1,3 @@
-/* styles.scss */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +7,10 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: large;
-  color-scheme: light dark;
 }
 
 .navbar__muni {
-  background-color: #3869be;
+  background-color: #0197db;
 }
 
 .navbar__links {
@@ -39,7 +37,6 @@
 }
 
 .code__container {
-
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 16px;

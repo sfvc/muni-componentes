@@ -11,7 +11,7 @@ export function DefaultNavbar () {
         </Navbar.Brand>
         <div className='flex md:order-2 gap-4'>
 
-          <Flowbite className=''>
+          <Flowbite className='navbar__muni'>
             <DarkThemeToggle />
           </Flowbite>
 
