@@ -6,7 +6,7 @@ export function DefaultNavbar () {
   return (
     <div>
       <Navbar fluid className='navbar__muni'>
-        <Navbar.Brand href='/'>
+        <Navbar.Brand as={Link} to='/'>
           <img src='/src/images/logo_CATACAPI.png' className='mr-3 h-20 sm:h-24' alt='Logito' />
         </Navbar.Brand>
         <div className='flex md:order-2 gap-4'>
@@ -39,7 +39,7 @@ export function DefaultNavbar () {
           <Navbar.Link as={Link} to='/' className='text-white navbar__links'>
             Instalación
           </Navbar.Link>
-          <Navbar.Link as={Link} to='/documentacion' className='text-white navbar__links'>Documentación</Navbar.Link>
+          <Navbar.Link as={Link} to='/componentes' className='text-white navbar__links'>Componentes</Navbar.Link>
           {/* <Navbar.Link as={Link} to='/empanadas' className='text-white navbar__links'>Servicio de empanadas</Navbar.Link>
         <Navbar.Link as={Link} to='/useful-sites' className='text-white navbar__links'>Sitios Útiles</Navbar.Link> */}
         </Navbar.Collapse>

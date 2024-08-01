@@ -29,7 +29,6 @@ module.exports = {
       { allowConstantExport: true }
     ],
     'react/prop-types': 'off',
-    'react-hooks/exhaustive-deps': 'off',
-    'eslint/camelcase': 'on'
+    'react-hooks/exhaustive-deps': 'off'
   }
 };
