@@ -7,7 +7,7 @@ export function DefaultNavbar () {
     <div>
       <Navbar fluid className='navbar__muni'>
         <Navbar.Brand as={Link} to='/'>
-          <img src='/src/images/logo_CATACAPI.png' className='mr-3 h-20 sm:h-24' alt='Logito' />
+          <img src='./src/images/logo_CATACAPI.png' className='mr-3 h-20 sm:h-24' alt='Logito' />
         </Navbar.Brand>
         <div className='flex md:order-2 gap-4'>
 
