@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import DefaultNavbar from '../assets/layout/DefaultNavbar'
 
 const HomePage = () => {
-  const [copiedText, setCopiedText] = useState(null)
+  const [, setCopiedText] = useState(null)
   const [copiedButton, setCopiedButton] = useState(null)
 
   const copyToClipboard = (text, buttonId) => {
@@ -24,7 +24,7 @@ const HomePage = () => {
     <main>
       <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
-        <div className='max-w-4xl mx-auto'>
+        <div className='max-w-5xl mx-auto'>
           <div className='border-b border-gray-700 pb-8 mb-10'>
             <h1 className='text-5xl font-bold mb-4 rainbow__text text-center'>Munibite</h1>
             <p className='text-lg text-black dark:text-white'>
@@ -96,7 +96,7 @@ const HomePage = () => {
                     : (
                       <button
                         onClick={() => copyToClipboard(code, buttonId)}
-                        className={`py-1 px-3 rounded ${copiedButton === buttonId ? 'bg-green-500 text-white' : 'bg-blue-500 text-white'}`}
+                        className={`py-1 px-3 rounded ${copiedButton === buttonId ? 'bg-green-500 text-white' : 'hover:bg-blue-700 bg-blue-500 dark:hover:bg-blue-600 text-white'}`}
                       >
                         {copiedButton === buttonId ? '¡Copiado!' : 'Copiar'}
                       </button>

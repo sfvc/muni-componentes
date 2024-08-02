@@ -9,6 +9,25 @@
   font-size: large;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+	width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #2b4d96;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #1c3c81c5;
+}
+
 .navbar__muni {
   background-color: #0197db;
 }
