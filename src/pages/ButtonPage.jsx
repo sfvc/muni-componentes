@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import ComponentsNavbar from '../assets/layout/ComponentsNavbar'
+import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Button } from 'flowbite-react'
 import { AiOutlineLoading } from 'react-icons/ai'
+import { FaCopy } from 'react-icons/fa'
 
-const ComponentsPage = () => {
+const ButtonPage = () => {
   const [, setCopiedText] = useState(null)
   const [copiedButton, setCopiedButton] = useState(null)
 
@@ -23,8 +24,8 @@ const ComponentsPage = () => {
   }
 
   return (
-    <main className='pt-24'> {/* Añadido un padding-top para compensar la altura de la navbar */}
-      <ComponentsNavbar />
+    <main>
+      <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-5xl mx-auto'>
           <div className='border-b border-gray-700 pb-8 mb-5'>
@@ -45,6 +46,9 @@ const ComponentsPage = () => {
               <pre>
                 <code>
                   {`
+import { Button } from 'flowbite-react'
+import { AiOutlineLoading } from 'react-icons/ai'
+
 <div className='flex flex-wrap gap-2'>
   <Button>Default</Button>
   <Button color='blue'>Azul</Button>
@@ -61,7 +65,10 @@ const ComponentsPage = () => {
               <div className='flex justify-end mt-2'>
                 <button
                   onClick={() => copyToClipboard(
-                    `<div className='flex flex-wrap gap-2'>
+                    `import { Button } from 'flowbite-react'
+  import { AiOutlineLoading } from 'react-icons/ai'
+                    
+  <div className='flex flex-wrap gap-2'>
   <Button>Default</Button>
   <Button color='blue'>Azul</Button>
   <Button color='success'>Enviar</Button>
@@ -73,8 +80,11 @@ const ComponentsPage = () => {
 </div>`,
                     'buttonCode'
                   )}
-                  className={`py-1 px-3 rounded ${copiedButton === 'buttonCode' ? 'bg-green-500 text-white' : 'hover:bg-blue-700 bg-blue-500 dark:hover:bg-blue-600 text-white'}`}
+                  className={`py-1 px-3 rounded flex items-center justify-center gap-2 ${
+                  copiedButton === 'buttonCode' ? 'bg-green-500 text-white' : 'hover:bg-blue-700 bg-blue-500 dark:hover:bg-blue-600 text-white'
+                  }`}
                 >
+                  <FaCopy className='mt-1' />
                   {copiedButton === 'buttonCode' ? '¡Copiado!' : 'Copiar'}
                 </button>
               </div>
@@ -86,4 +96,4 @@ const ComponentsPage = () => {
   )
 }
 
-export default ComponentsPage
+export default ButtonPage

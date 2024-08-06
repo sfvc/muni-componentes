@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DefaultNavbar from '../assets/layout/DefaultNavbar'
+import { FaCopy } from 'react-icons/fa'
 
 const HomePage = () => {
   const [, setCopiedText] = useState(null)
@@ -58,7 +59,7 @@ const HomePage = () => {
               buttonId: null,
               isLink: true,
               link: '/index.css',
-              linkText: 'Descargar index.css'
+              linkText: 'index.css'
             },
             {
               title: '5. Instalar Flowbite React.',
@@ -96,8 +97,11 @@ const HomePage = () => {
                     : (
                       <button
                         onClick={() => copyToClipboard(code, buttonId)}
-                        className={`py-1 px-3 rounded ${copiedButton === buttonId ? 'bg-green-500 text-white' : 'hover:bg-blue-700 bg-blue-500 dark:hover:bg-blue-600 text-white'}`}
+                        className={`py-1 px-3 rounded flex items-center justify-center gap-2 ${
+                          copiedButton === buttonId ? 'bg-green-500 text-white' : 'hover:bg-blue-700 bg-blue-500 dark:hover:bg-blue-600 text-white'
+                          }`}
                       >
+                        <FaCopy className='mt-1' />
                         {copiedButton === buttonId ? '¡Copiado!' : 'Copiar'}
                       </button>
                       )}

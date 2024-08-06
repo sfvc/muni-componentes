@@ -1,8 +1,11 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import ComponentsPage from './pages/ComponentsPage'
+import ButtonPage from './pages/ButtonPage'
 import HomePage from './pages/HomePage'
 import Error from './pages/404'
+import NavbarPage from './pages/NavbarPage'
+import Layout from './assets/layout/Layout'
+import LoginPage from './pages/LoginPage'
 
 function App () {
   return (
@@ -10,7 +13,10 @@ function App () {
       <main>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/componentes' element={<ComponentsPage />} />
+          <Route path='/botones' element={<ButtonPage />} />
+          <Route path='/navbar' element={<NavbarPage />} />
+          <Route path='/layout' element={<Layout />} />
+          <Route path='/login' element={<LoginPage />} />
           <Route path='*' element={<Navigate to='/404' />} />
 
           {/* Ruta de error */}
