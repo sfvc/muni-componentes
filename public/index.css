@@ -6,7 +6,7 @@
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size: large;
+  font-size: medium;
 }
 
 html {
@@ -141,9 +141,7 @@ html {
 }
 
 .auth-footer {
-  font-size: small;
-  font-weight: normal;
-  color: #718096;
+  font-size: medium;
   bottom: 0;
   z-index: 999;
   padding-bottom: 15px;

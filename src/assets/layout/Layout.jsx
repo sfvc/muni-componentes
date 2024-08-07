@@ -8,7 +8,7 @@ export function Layout () {
     <div className='flex flex-col min-h-screen'>
       <DefaultNavbar />
       <div className='flex flex-1'>
-        <Sidebar className='rounded-none w-44 md:block hidden'>
+        <Sidebar className='rounded-none w-44 md:block hidden h-dvh'>
           <Sidebar.Items>
             <Sidebar.ItemGroup>
               <Sidebar.Item href='#' icon={HiChartPie}>
@@ -54,6 +54,34 @@ export function Layout () {
         </Sidebar>
         <div className='w-4/5 p-4'>
           <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+          <h1>Oli</h1>
+
         </div>
       </div>
       <Footer container className='rounded-none'>

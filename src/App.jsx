@@ -6,6 +6,7 @@ import Error from './pages/404'
 import NavbarPage from './pages/NavbarPage'
 import Layout from './assets/layout/Layout'
 import LoginPage from './pages/LoginPage'
+import CardPage from './pages/CardPage'
 
 function App () {
   return (
@@ -17,6 +18,7 @@ function App () {
           <Route path='/navbar' element={<NavbarPage />} />
           <Route path='/layout' element={<Layout />} />
           <Route path='/login' element={<LoginPage />} />
+          <Route path='/card' element={<CardPage />} />
           <Route path='*' element={<Navigate to='/404' />} />
 
           {/* Ruta de error */}

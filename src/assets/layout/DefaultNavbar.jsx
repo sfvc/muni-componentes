@@ -47,6 +47,14 @@ export function DefaultNavbar () {
                   Login
                 </Dropdown.Item>
               </Navbar.Link>
+
+              <Dropdown.Divider />
+
+              <Navbar.Link as={Link} to='/card'>
+                <Dropdown.Item>
+                  Card
+                </Dropdown.Item>
+              </Navbar.Link>
             </Dropdown>
           </div>
           <Navbar.Link as={Link} to='/layout' className='text-white navbar__links'>Layout</Navbar.Link>

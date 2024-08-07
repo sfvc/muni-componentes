@@ -1,0 +1,42 @@
+[
+    {
+      "title": "1. Instalar TailwindCSS.",
+      "description": "Instalar TailwindCSS y crear los archivos tailwind.config.js y postcss.config.js",
+      "code": "npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p",
+      "buttonId": "installTailwind"
+    },
+    {
+      "title": "2. Añadir Tailwind a tu configuración de PostCSS.",
+      "description": "Añade TailwindCSS y autoprefixer a tu archivo postcss.config.js.",
+      "code": "export default {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {}\n  }\n}",
+      "buttonId": "addTailwindConfig"
+    },
+    {
+      "title": "3. Configurar las rutas de la plantilla.",
+      "description": "Añade las rutas para el uso correcto de Tailwind en tu archivo tailwind.config.js.",
+      "code": "/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: ['./src/**/*.{html,js}'],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}",
+      "buttonId": "configRoutes"
+    },
+    {
+      "title": "4. Descargar los estilos propios.",
+      "description": "Descarga el archivo index.css que contiene todos los estilos propios, y luego pégalo en tu carpeta de estilos.",
+      "code": "",
+      "buttonId": null,
+      "isLink": true,
+      "link": "/index.css",
+      "linkText": "Descargar index.css"
+    },
+    {
+      "title": "5. Instalar Flowbite React.",
+      "description": "Instala la dependencia de Flowbite React a tu proyecto.",
+      "code": "npm i flowbite-react",
+      "buttonId": "installFlowbite"
+    },
+    {
+      "title": "6. Configurar las rutas de Flowbite React.",
+      "description": "Reemplaza las rutas para el uso correcto de Flowbite React en tu archivo tailwind.config.js.",
+      "code": "const flowbite = require('flowbite-react/tailwind')\n/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    './src/**/*.{js,jsx,ts,tsx}',\n    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',\n    flowbite.content()\n  ],\n  theme: {\n    extend: {}\n  },\n  plugins: [flowbite.plugin()]\n}",
+      "buttonId": "configFlowbite"
+    }
+  ]
+  
