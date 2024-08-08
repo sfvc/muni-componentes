@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Botones por defecto",
+    "description": "Mayormente utilizado para redirigir al usuario a otra seccion",
+    "code": "import { Button } from 'flowbite-react'\nimport { AiOutlineLoading } from 'react-icons/ai'\n\n<div className='flex flex-wrap gap-2 justify-center mb-5'>\n  <Button>Default</Button>\n  <Button color='blue'>Azul</Button>\n  <Button color='success'>Enviar</Button>\n  <Button color='failure'>Cancelar</Button>\n  <Button color='warning'>Peligro</Button>\n  <Button disabled>Deshabilitado</Button>\n  <Button size='md' isProcessing processingSpinner={<AiOutlineLoading className='h-6 w-6 animate-spin' />}>Cargando</Button>\n</div>",
+    "buttonId": "botonesInstall"
+  },
+  {
+    "title": "Botones Redondos",
+    "description": "Mayormente utilizado para modales y formularios",
+    "code": "import { Button } from 'flowbite-react'\nimport { AiOutlineLoading } from 'react-icons/ai'\n\n<div className='flex flex-wrap gap-2 justify-center mb-5'>\n  <Button pill>Default</Button>\n  <Button color='blue' pill>Azul</Button>\n  <Button color='success' pill>Enviar</Button>\n  <Button color='failure' pill>Cancelar</Button>\n  <Button color='warning' pill>Peligro</Button>\n  <Button disabled pill>Deshabilitado</Button>\n  <Button size='md' isProcessing pill processingSpinner={<AiOutlineLoading className='h-6 w-6 animate-spin' />}>Cargando</Button>\n</div>",
+    "buttonId": "botonesRedondosInstall"
+  }
+]

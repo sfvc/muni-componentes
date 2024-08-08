@@ -1,14 +1,14 @@
 import React from 'react'
 import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Clipboard } from 'flowbite-react'
-import instalacion from '../assets/components/instalacion.json'
+import instalacion from '../json/instalacion.json'
 
 const HomePage = () => {
   return (
     <main>
       <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
-        <div className='max-w-5xl mx-auto'>
+        <div className='max-w-5xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-10'>
             <h1 className='text-5xl font-bold mb-4 rainbow__text text-center'>Munibite</h1>
             <p className='text-lg text-black dark:text-white'>
@@ -17,7 +17,7 @@ const HomePage = () => {
           </div>
 
           {instalacion.map(({ title, description, code, buttonId, isLink, link, linkText }, index) => (
-            <div className='mb-10 text-black dark:text-white' key={index}>
+            <div className='mb-10 text-black dark:text-white overflow-x-auto' key={index}>
               <h2 className='text-2xl font-semibold mb-4'>{title}</h2>
               <p className='mb-4'>{description}</p>
               {isLink

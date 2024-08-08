@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Navbar por Defecto",
+        "description": "Basado en los diversos tipos de navbar que utilizamos en los sistemas",
+        "code": "import { DarkThemeToggle, Flowbite, Navbar } from \"flowbite-react\";\n\n<Navbar fluid className='navbar__muni'>\n    <Navbar.Brand href='/'>\n        <img src='/src/images/logo_CATACAPI_claro.png' className='mr-3 h-20 sm:h-24' alt='Logo' />\n    </Navbar.Brand>\n<div className='flex md:order-2 gap-2'>\n\n    <Flowbite className='navbar__muni'>\n    <DarkThemeToggle className='dark:text-gray-400 text-white hover:bg-[#3ec2ff]' />\n    </Flowbite>\n\n    <Dropdown\n        arrowIcon={false}\n        inline\n        label={\n        <Avatar rounded />\n        }\n        >\n        <Dropdown.Header>\n        <span className='block text-sm'>test test</span>\n        <span className='block truncate text-sm font-medium'>test@test.com</span>\n        </Dropdown.Header>\n        <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>\n        <Dropdown.Item>Cerrar Sesión</Dropdown.Item>\n    </Dropdown>\n    <Navbar.Toggle />\n</div>\n    <Navbar.Collapse>\n        <Navbar.Link href='#' className='text-white navbar__links'>\n        Inicio\n        </Navbar.Link>\n        <Navbar.Link href='#' className='text-white navbar__links'>Coso</Navbar.Link>\n        <Navbar.Link href='#' className='text-white navbar__links'>Cosito</Navbar.Link>\n        <Navbar.Link href='#' className='text-white navbar__links'>Contacto</Navbar.Link>\n    </Navbar.Collapse>\n</Navbar>",
+        "buttonId": "navbarInstall"
+    }
+]
