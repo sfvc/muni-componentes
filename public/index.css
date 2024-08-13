@@ -192,3 +192,12 @@ h4 {
     color: #d1d5db;
   }
 }
+
+.stickyNavbar {
+  position: sticky;
+  top: 0;
+}
+
+.fixedSideBard {
+  position: fixed;
+}

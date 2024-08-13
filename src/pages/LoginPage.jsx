@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { TextInput, Clipboard } from 'flowbite-react'
 import login from '../json/login.json'
 import LogoClaro from '@/images/logo_CATACAPI_claro.png'
@@ -16,7 +15,6 @@ export const LoginPage = () => {
   return (
     <>
       <div>
-        <DefaultNavbar />
         <div className='loginwrapper'>
           <div className='lg-inner-column'>
             <div className='left-column relative z-[1]'>

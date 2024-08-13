@@ -7,25 +7,32 @@ import NavbarPage from './pages/NavbarPage'
 import Layout from './assets/layout/Layout'
 import LoginPage from './pages/LoginPage'
 import CardPage from './pages/CardPage'
+import SideBarPage from './pages/SideBardPage'
 
 function App () {
   return (
-    <>
-      <main>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/botones' element={<ButtonPage />} />
-          <Route path='/navbar' element={<NavbarPage />} />
-          <Route path='/layout' element={<Layout />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/card' element={<CardPage />} />
-          <Route path='*' element={<Navigate to='/404' />} />
 
-          {/* Ruta de error */}
-          <Route path='/404' element={<Error />} />
-        </Routes>
-      </main>
-    </>
+    <Routes>
+      {/* Rutas envueltas por el Layout */}
+      <Route element={<Layout />}>
+
+        <Route path='/' element={<HomePage />} />
+
+        {/* Componentes */}
+        <Route path='/botones' element={<ButtonPage />} />
+        <Route path='/card' element={<CardPage />} />
+        <Route path='/login' element={<LoginPage />} />
+
+        {/* Layout */}
+        <Route path='/navbar' element={<NavbarPage />} />
+        <Route path='/sidebar' element={<SideBarPage />} />
+
+      </Route>
+
+      {/* Rutas fuera del Layout */}
+      <Route path='*' element={<Navigate to='/404' />} />
+      <Route path='/404' element={<Error />} />
+    </Routes>
   )
 }
 

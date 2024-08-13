@@ -1,12 +1,12 @@
 import React from 'react'
-import { DarkThemeToggle, Dropdown, Flowbite, Navbar } from 'flowbite-react'
+import { DarkThemeToggle, Flowbite, Navbar } from 'flowbite-react'
 import { Link } from 'react-router-dom'
 import Logo from '@/images/logo_CATACAPI_claro.png'
 
 export function DefaultNavbar () {
   return (
-    <div>
-      <Navbar fluid className='navbar__muni'>
+    <div className='stickyNavbar z-50'>
+      <Navbar fluid className='navbar__muni z-50'>
         <Navbar.Brand as={Link} to='/'>
           <img src={Logo} className='mr-3 h-20 sm:h-28' alt='Logito' />
         </Navbar.Brand>
@@ -18,48 +18,6 @@ export function DefaultNavbar () {
 
           <Navbar.Toggle />
         </div>
-        <Navbar.Collapse>
-          <Navbar.Link as={Link} to='/' className='text-white navbar__links'>
-            Instalación
-          </Navbar.Link>
-          <div className='text-white dark:text-gray-400 navbar__links'>
-            <Dropdown
-              inline
-              label='Componentes'
-            >
-              <Navbar.Link as={Link} to='/botones'>
-                <Dropdown.Item>
-                  Botones
-                </Dropdown.Item>
-              </Navbar.Link>
-
-              <Dropdown.Divider />
-
-              <Navbar.Link as={Link} to='/navbar'>
-                <Dropdown.Item>
-                  Navbar
-                </Dropdown.Item>
-              </Navbar.Link>
-
-              <Dropdown.Divider />
-
-              <Navbar.Link as={Link} to='/login'>
-                <Dropdown.Item>
-                  Login
-                </Dropdown.Item>
-              </Navbar.Link>
-
-              <Dropdown.Divider />
-
-              <Navbar.Link as={Link} to='/card'>
-                <Dropdown.Item>
-                  Card
-                </Dropdown.Item>
-              </Navbar.Link>
-            </Dropdown>
-          </div>
-          <Navbar.Link as={Link} to='/layout' className='text-white navbar__links'>Layout</Navbar.Link>
-        </Navbar.Collapse>
       </Navbar>
     </div>
   )

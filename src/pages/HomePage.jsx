@@ -1,12 +1,10 @@
 import React from 'react'
-import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Clipboard } from 'flowbite-react'
 import instalacion from '../json/instalacion.json'
 
 const HomePage = () => {
   return (
     <main>
-      <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-5xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-10'>

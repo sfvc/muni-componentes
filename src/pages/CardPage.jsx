@@ -1,5 +1,4 @@
 import React from 'react'
-import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Card, TextInput, Clipboard, Table, Tooltip } from 'flowbite-react'
 import card from '../json/card.json'
 
@@ -9,7 +8,6 @@ const CardPage = () => {
 
   return (
     <main>
-      <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-6xl mx-auto'>
           <div className='border-b border-gray-700 pb-8 mb-5'>

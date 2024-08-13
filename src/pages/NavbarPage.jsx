@@ -1,5 +1,4 @@
 import React from 'react'
-import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Avatar, DarkThemeToggle, Dropdown, Flowbite, Navbar, Clipboard } from 'flowbite-react'
 import navbar from '../json/navbar.json'
 import Logo from '@/images/logo_CATACAPI_claro.png'
@@ -7,7 +6,6 @@ import Logo from '@/images/logo_CATACAPI_claro.png'
 const NavbarPage = () => {
   return (
     <main>
-      <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-6xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-5'>

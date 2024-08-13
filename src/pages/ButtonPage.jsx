@@ -1,5 +1,4 @@
 import React from 'react'
-import DefaultNavbar from '../assets/layout/DefaultNavbar'
 import { Button, Clipboard } from 'flowbite-react'
 import { AiOutlineLoading } from 'react-icons/ai'
 import botones from '../json/botones.json'
@@ -10,7 +9,6 @@ const ButtonPage = () => {
 
   return (
     <main>
-      <DefaultNavbar />
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-7xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-5'>
