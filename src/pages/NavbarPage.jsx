@@ -1,5 +1,6 @@
 import React from 'react'
 import { Avatar, DarkThemeToggle, Dropdown, Flowbite, Navbar, Clipboard } from 'flowbite-react'
+import { HiOutlineLogin, HiOutlineLockClosed } from 'react-icons/hi'
 import navbar from '../json/navbar.json'
 import Logo from '@/images/logo_CATACAPI_claro.png'
 
@@ -34,8 +35,8 @@ const NavbarPage = () => {
                       <span className='block text-sm'>test test</span>
                       <span className='block truncate text-sm font-medium'>test@test.com</span>
                     </Dropdown.Header>
-                    <Dropdown.Item>Cambiar Contraseña</Dropdown.Item>
-                    <Dropdown.Item>Cerrar Sesión</Dropdown.Item>
+                    <Dropdown.Item icon={HiOutlineLockClosed}>Cambiar Contraseña</Dropdown.Item>
+                    <Dropdown.Item icon={HiOutlineLogin}>Cerrar Sesión</Dropdown.Item>
                   </Dropdown>
                   <Navbar.Toggle />
                 </div>

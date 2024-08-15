@@ -1,50 +1,23 @@
 import React, { useState } from 'react'
-import { Sidebar, Button, Clipboard } from 'flowbite-react'
-import { FaHome } from 'react-icons/fa'
-import { Link, Outlet } from 'react-router-dom'
-import { HiMenu, HiOutlineUsers } from 'react-icons/hi'
-import sidebar from '../json/sidebar.json'
+import { Clipboard, Pagination } from 'flowbite-react'
+import pagination from '../json/pagination.json'
 
-const SideBarPage = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-
+const PaginationPage = () => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const onPageChange = (page = 1) => setCurrentPage(page)
   return (
     <main>
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
-        <div className='max-w-7xl mx-auto overflow-x-hidden'>
+        <div className='max-w-6xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-5'>
-            <h1 className='text-5xl font-bold mb-4 text-center text-black dark:text-white'>Sidebar</h1>
+            <h1 className='text-5xl font-bold mb-4 text-center text-black dark:text-white'>Paginado</h1>
           </div>
           <div className='mb-10 text-black dark:text-white'>
-            <div className='flex flex-col dark:bg-gray-800'>
-
-              <div className='md:hidden lg:hidden p-4'>
-                <Button onClick={() => setSidebarOpen(!sidebarOpen)}>
-                  <HiMenu className='h-6 w-6' />
-                </Button>
-              </div>
-
-              <div className='flex flex-1'>
-                <Sidebar className={`rounded-none w-44 transition-transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
-                  <Sidebar.Items>
-                    <Sidebar.ItemGroup>
-                      <Sidebar.Item as={Link} to='#' icon={FaHome}>
-                        Dashboard
-                      </Sidebar.Item>
-                      <Sidebar.Item as={Link} to='#' icon={HiOutlineUsers}>
-                        Usuarios
-                      </Sidebar.Item>
-                    </Sidebar.ItemGroup>
-                  </Sidebar.Items>
-                </Sidebar>
-
-                <div className='w-full'>
-                  <Outlet />
-                </div>
-              </div>
+            <div className='flex overflow-x-auto sm:justify-center'>
+              <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} />
             </div>
 
-            {sidebar.map(({ title, code, description, buttonId }, index) => (
+            {pagination.map(({ title, code, description, buttonId }, index) => (
               <div className='mb-10 text-black dark:text-white overflow-x-auto mt-5' key={index}>
                 <h2 className='text-2xl font-semibold mb-4'>{title}</h2>
                 <p className='mb-4'>{description}</p>
@@ -79,4 +52,4 @@ const SideBarPage = () => {
   )
 }
 
-export default SideBarPage
+export default PaginationPage

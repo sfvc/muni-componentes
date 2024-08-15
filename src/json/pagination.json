@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Paginacion por Defecto",
+        "description": "Basado en el paginado que utilizamos en algunos sistemas",
+        "code": "import React, { useState } from 'react';\nimport { Pagination } from 'flowbite-react';\n\nconst PaginationComponent = () => {\n  const [currentPage, setCurrentPage] = useState(1);\n  const onPageChange = (page = 1) => setCurrentPage(page);\n\n  return (\n    <div className='flex overflow-x-auto sm:justify-center'>\n      <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} />\n    </div>\n  );\n};\n\nexport default PaginationComponent;",
+        "buttonId": "PaginationInstall"
+    }
+]

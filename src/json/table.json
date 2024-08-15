@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Table por Defecto",
+        "description": "Basado en el footer que utilizamos en los sistemas",
+        "code": "import React from 'react';\nimport { Table } from 'flowbite-react';\n\nconst TableComponent = () => {\n  return (\n    <div className='overflow-x-auto'>\n      <Table hoverable>\n        <Table.Head>\n          <Table.HeadCell className='text-center bg-gray-300'>Nombre</Table.HeadCell>\n          <Table.HeadCell className='text-center bg-gray-300'>Apellido</Table.HeadCell>\n          <Table.HeadCell className='text-center bg-gray-300'>Acciones</Table.HeadCell>\n        </Table.Head>\n        <Table.Body className='divide-y'>\n          <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>\n            <Table.Cell className='text-center dark:text-white'>Pepe</Table.Cell>\n            <Table.Cell className='text-center dark:text-white'>Pedrito</Table.Cell>\n            <Table.Cell className='flex gap-2 text-center items-center justify-center'>\n              <EditButton />\n              <DeleteButton />\n            </Table.Cell>\n          </Table.Row>\n        </Table.Body>\n      </Table>\n    </div>\n  );\n};\n\nexport default TableComponent;",
+        "buttonId": "tableInstall"
+    }
+]

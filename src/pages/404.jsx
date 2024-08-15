@@ -14,12 +14,8 @@ function Error () {
           Esto pasa por curioso.
         </div>
       </div>
-      <Button className='max-w-[300px] mx-auto w-full'>
-        <Link
-          to='/'
-        >
-          Volver al inicio
-        </Link>
+      <Button className='max-w-[300px] mx-auto w-full' as={Link} to='/'>
+        Volver al inicio
       </Button>
     </div>
   )

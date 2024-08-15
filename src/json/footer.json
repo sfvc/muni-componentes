@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Footer por Defecto",
+        "description": "Basado en el footer que utilizamos en los sistemas",
+        "code": "import React from 'react';\nimport { Footer } from 'flowbite-react';\n\nexport function Footer() {\n  return (\n    <div className='z-20 navbar__muni'>\n      <Footer container className='rounded-none navbar__muni'>\n        <Footer.Copyright\n          by='Municipalidad de la Ciudad de San Fernando Del Valle de Catamarca.'\n          href='https://www.catamarcaciudad.gob.ar'\n          target='_blank'\n          className='text-white'\n          year={new Date().getFullYear()}\n        />\n      </Footer>\n    </div>\n  );\n}\n\nexport default Footer;",
+        "buttonId": "footerInstall"
+    }
+]

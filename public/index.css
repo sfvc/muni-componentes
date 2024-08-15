@@ -22,10 +22,20 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #2b4d96;
+	background: #0197db;
 }
+
 ::-webkit-scrollbar-thumb:hover {
 	background: #1c3c81c5;
+}
+
+.sticky__navbar {
+  position: sticky;
+  top: 0;
+}
+
+.fixed__sidebar {
+  position: fixed;
 }
 
 .navbar__icon {
@@ -154,7 +164,7 @@ html {
   }
 
   .loginwrapper .right-column {
-    width: 100%; /* Asegúrate de que el formulario ocupe todo el ancho */
+    width: 100%;
   }
 }
 
@@ -191,13 +201,4 @@ h4 {
   h4 {
     color: #d1d5db;
   }
-}
-
-.stickyNavbar {
-  position: sticky;
-  top: 0;
-}
-
-.fixedSideBard {
-  position: fixed;
 }

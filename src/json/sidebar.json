@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Sidebar",
+        "description": "Basado en el estilo estándar de sidebar",
+        "code": "import React from 'react';\nimport { HiOutlineUsers } from 'react-icons/hi';\nimport { Sidebar } from 'flowbite-react';\nimport { FaHome } from 'react-icons/fa';\nimport { Link, Outlet } from 'react-router-dom';\n\nexport function Sidebar({ sidebarOpen }) {\n  return (\n    <div className='flex flex-1'>\n      <Sidebar className={`rounded-none w-44 transition-transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>\n        <Sidebar.Items>\n          <Sidebar.ItemGroup>\n            <Sidebar.Item as={Link} to='#' icon={FaHome}>\n              Dashboard\n            </Sidebar.Item>\n            <Sidebar.Item as={Link} to='#' icon={HiOutlineUsers}>\n              Usuarios\n            </Sidebar.Item>\n          </Sidebar.ItemGroup>\n        </Sidebar.Items>\n      </Sidebar>\n      <div className='w-full'>\n        <Outlet />\n      </div>\n    </div>\n  );\n}\n\nexport default Sidebar;",
+        "buttonId": "sideBarInstall"
+    }
+]
