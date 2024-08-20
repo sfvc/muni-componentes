@@ -13,7 +13,7 @@ import { TfiLayoutMediaOverlayAlt } from 'react-icons/tfi'
 export function DefaultSideBar ({ sidebarOpen }) {
   return (
     <div className='flex flex-1'>
-      <Sidebar className={`z-20 rounded-none w-52 fixed__sidebar transition-transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
+      <Sidebar className={`z-20 rounded-none w-52 fixed__sidebar transition-transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg-custom:translate-x-0`}>
         <Sidebar.Items>
           <Sidebar.ItemGroup>
             <Sidebar.Item as={Link} to='/' icon={FaHome}>
@@ -30,10 +30,18 @@ export function DefaultSideBar ({ sidebarOpen }) {
                 return <IconComponent aria-hidden className={twMerge(theme.label.icon.open[open ? 'on' : 'off'])} />
               }}
             >
-              <Sidebar.Item as={Link} to='navbar' icon={TbLayoutNavbar}>Navbar</Sidebar.Item>
-              <Sidebar.Item as={Link} to='sidebar' icon={TbLayoutSidebar}>Side Bar</Sidebar.Item>
-              <Sidebar.Item as={Link} to='footer' icon={TfiLayoutMediaOverlayAlt}>Footer</Sidebar.Item>
-              <Sidebar.Item href='/layout.zip' icon={TbFileDownload}>Descargar</Sidebar.Item>
+              <Sidebar.Item as={Link} to='navbar' icon={TbLayoutNavbar}>
+                Navbar
+              </Sidebar.Item>
+              <Sidebar.Item as={Link} to='sidebar' icon={TbLayoutSidebar}>
+                Side Bar
+              </Sidebar.Item>
+              <Sidebar.Item as={Link} to='footer' icon={TfiLayoutMediaOverlayAlt}>
+                Footer
+              </Sidebar.Item>
+              <Sidebar.Item href='/layout.zip' icon={TbFileDownload}>
+                Descargar
+              </Sidebar.Item>
             </Sidebar.Collapse>
             <Sidebar.Item as={Link} to='/card' icon={BsCardHeading}>
               Card

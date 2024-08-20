@@ -7,7 +7,11 @@ export default {
     flowbite.content()
   ],
   theme: {
-    extend: {}
+    extend: {
+      screens: {
+        'lg-custom': '1500px'
+      }
+    }
   },
   plugins: [flowbite.plugin()]
 }
