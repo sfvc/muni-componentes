@@ -1,55 +1,9 @@
 import React from 'react'
-import { Card, TextInput, Clipboard, Table, Tooltip } from 'flowbite-react'
+import { Card, TextInput, Clipboard, Table } from 'flowbite-react'
 import card from '../json/card.json'
-
-const IconButton = ({ tooltipContent, onClick, iconPath, className }) => (
-  <Tooltip content={tooltipContent} placement='top' arrow animation='shift-away'>
-    <button className={className} onClick={onClick}>
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='24'
-        height='24'
-        viewBox='0 0 24 24'
-        strokeWidth='2'
-        stroke='currentColor'
-        fill='none'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      >
-        {iconPath.map((path, index) => (
-          <path key={index} {...path} />
-        ))}
-      </svg>
-    </button>
-  </Tooltip>
-)
-
-const EditButton = () => (
-  <IconButton
-    tooltipContent='Editar'
-    className='bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700'
-    iconPath={[
-      { d: 'M0 0h24v24H0z', stroke: 'none', fill: 'none' },
-      { d: 'M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4' },
-      { d: 'M13.5 6.5l4 4' }
-    ]}
-  />
-)
-
-const DeleteButton = () => (
-  <IconButton
-    tooltipContent='Eliminar'
-    className='bg-red-500 text-white p-2 rounded-lg hover:bg-red-700'
-    iconPath={[
-      { d: 'M0 0h24v24H0z', stroke: 'none', fill: 'none' },
-      { d: 'M4 7l16 0' },
-      { d: 'M10 11l0 6' },
-      { d: 'M14 11l0 6' },
-      { d: 'M5 7l1 12.5a1 1 0 0 0 1 0.5h10a1 1 0 0 0 1 -0.5l1 -12.5' },
-      { d: 'M9 7l0 -3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1l0 3' }
-    ]}
-  />
-)
+import DeleteButton from '../assets/components/DeleteButton'
+import EditButton from '../assets/components/EditButton'
+import DownloadButton from '../assets/components/DownloadButton'
 
 const CardContent = ({ title, code, description, buttonId }) => (
   <div className='mb-10 mt-5 text-black dark:text-white overflow-x-auto'>
@@ -77,6 +31,12 @@ const CardContent = ({ title, code, description, buttonId }) => (
 )
 
 const CardPage = () => {
+  const downloadButtons = () => {
+    const link = document.createElement('a')
+    link.href = '/buttons.zip'
+    link.download = 'buttons.zip'
+    link.click()
+  }
   const [primeraCard, segundaCard] = card
 
   return (
@@ -109,35 +69,26 @@ const CardPage = () => {
                 <div className='overflow-x-auto'>
                   <Table hoverable>
                     <Table.Head>
-                      <Table.HeadCell>Nombre</Table.HeadCell>
-                      <Table.HeadCell>Apellido</Table.HeadCell>
-                      <Table.HeadCell>DNI</Table.HeadCell>
-                      <Table.HeadCell>Estado</Table.HeadCell>
-                      <Table.HeadCell>Acciones</Table.HeadCell>
+                      <Table.HeadCell className='text-center bg-gray-300'>Nombre</Table.HeadCell>
+                      <Table.HeadCell className='text-center bg-gray-300'>Apellido</Table.HeadCell>
+                      <Table.HeadCell className='text-center bg-gray-300'>DNI</Table.HeadCell>
+                      <Table.HeadCell className='text-center bg-gray-300'>Domicilio</Table.HeadCell>
+                      <Table.HeadCell className='text-center bg-gray-300'>Acciones</Table.HeadCell>
                     </Table.Head>
-                    <Table.Body className='bg-white divide-y divide-slate-100 dark:bg-slate-800 dark:divide-slate-700'>
-                      {[{ nombre: 'Pepito', apellido: 'Peposo', dni: '12.345.678', estado: 'ACTIVO' },
-                        { nombre: 'Martin', apellido: 'Martinsito', dni: '13.579.246', estado: 'INACTIVO' },
-                        { nombre: 'Jhon', apellido: 'Smith', dni: '24.681.357', estado: 'ACTIVO' }].map((persona, index) => (
-                          <Table.Row key={index} className='bg-white dark:border-gray-700 dark:bg-gray-800'>
-                            <Table.Cell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                              {persona.nombre}
-                            </Table.Cell>
-                            <Table.Cell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                              {persona.apellido}
-                            </Table.Cell>
-                            <Table.Cell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                              {persona.dni}
-                            </Table.Cell>
-                            <Table.Cell className='whitespace-nowrap font-medium text-gray-900 dark:text-white'>
-                              {persona.estado}
-                            </Table.Cell>
-                            <Table.Cell className='flex space-x-2'>
-                              <EditButton />
-                              <DeleteButton />
-                            </Table.Cell>
-                          </Table.Row>
-                      ))}
+                    <Table.Body className='divide-y'>
+                      <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
+                        <Table.Cell className='text-center dark:text-white'>Pepe</Table.Cell>
+                        <Table.Cell className='text-center dark:text-white'>Pedrito</Table.Cell>
+                        <Table.Cell className='text-center dark:text-white'>12.345.678</Table.Cell>
+                        <Table.Cell className='text-center dark:text-white'>Calle Falsa 123</Table.Cell>
+                        <Table.Cell className='flex gap-2 text-center items-center justify-center'>
+                          <EditButton />
+
+                          <DeleteButton />
+
+                          <DownloadButton onClick={downloadButtons} />
+                        </Table.Cell>
+                      </Table.Row>
                     </Table.Body>
                   </Table>
                 </div>

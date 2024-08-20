@@ -8,7 +8,7 @@ const HomePage = () => {
       <div className='min-h-screen bg-white dark:bg-gray-900 text-white p-8'>
         <div className='max-w-5xl mx-auto overflow-x-hidden'>
           <div className='border-b border-gray-700 pb-8 mb-10'>
-            <h1 className='text-5xl font-bold mb-4 rainbow__text text-center'>Munibite</h1>
+            <h1 className='text-5xl font-bold mb-4 rainbow__text text-center'>Municomponentes</h1>
             <p className='text-lg text-black dark:text-white'>
               Instalación de las librerías necesarias, compuestas por <a href='https://tailwindcss.com/docs/installation/using-postcss' target='_blank' rel='noreferrer' className='text-blue-500'>TailwindCSS</a> y <a href='https://flowbite-react.com/docs/getting-started/introduction' target='_blank' rel='noreferrer' className='text-blue-500'>Flowbite React</a>.
             </p>

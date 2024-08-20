@@ -1,12 +1,42 @@
 import React, { useState } from 'react'
-import { Clipboard, Datepicker, Label, Select, TextInput } from 'flowbite-react'
+import { Clipboard, Datepicker, Label, Select, TextInput, Radio, Checkbox, FileInput, Textarea } from 'flowbite-react'
 import form from '../json/form.json'
 
 const FormPage = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [telefono, setTelefono] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState('')
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword)
+  }
+
+  const handleChange = (e) => {
+    const { value } = e.target
+    const numericValue = value.replace(/\D/g, '')
+    let formattedValue = ''
+    if (numericValue.length > 0) {
+      formattedValue += numericValue.substring(0, 3)
+    }
+    if (numericValue.length > 3) {
+      formattedValue += '-' + numericValue.substring(3, 10)
+    }
+
+    setTelefono(formattedValue)
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const validateEmail = () => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailPattern.test(email)) {
+      setEmailError('Por favor, ingrese un correo electrónico válido.')
+    } else {
+      setEmailError('')
+    }
   }
 
   return (
@@ -30,6 +60,7 @@ const FormPage = () => {
                   <TextInput
                     name='nombre'
                     placeholder='Nombre'
+                    helperText='Tu nombresuli'
                   />
                 </div>
 
@@ -37,14 +68,36 @@ const FormPage = () => {
                   <div className='mb-2 block dark:text-white'>
                     <Label
                       color='gray'
-                      htmlFor='apellido'
-                      value='Apellido'
+                      htmlFor='telefono'
+                      value='Teléfono'
                     />
                   </div>
                   <TextInput
-                    name='apellido'
-                    placeholder='Apellido'
+                    name='telefono'
+                    placeholder='Teléfono'
+                    value={telefono}
+                    onChange={handleChange}
+                    helperText='Tu telefonuki, sin el 0 ni el 15'
                   />
+                </div>
+
+                <div className='mb-4'>
+                  <div className='mb-2 block dark:text-white'>
+                    <Label
+                      color='gray'
+                      htmlFor='email'
+                      value='Correo Electrónico'
+                    />
+                  </div>
+                  <TextInput
+                    name='email'
+                    placeholder='Correo Electrónico'
+                    value={email}
+                    onChange={handleEmailChange}
+                    onBlur={validateEmail}
+                    helperText='Tu correuki'
+                  />
+                  {emailError && <p className='text-red-500 text-sm mt-2'>{emailError}</p>}
                 </div>
 
                 <div className='mb-4'>
@@ -55,20 +108,14 @@ const FormPage = () => {
                       value='Fecha'
                     />
                   </div>
-                  <Datepicker language='es-AR' labelTodayButton='Hoy' labelClearButton='Limpiar' />
+                  <Datepicker language='es-AR' labelTodayButton='Hoy' labelClearButton='Limpiar' helperText='Tu fechuki' />
                 </div>
 
                 <div className='mb-4'>
                   <div className='mb-2 block dark:text-white'>
-                    <Label
-                      htmlFor='estadoCivil'
-                      value='Estado civil'
-                    />
+                    <Label htmlFor='estadoCivil' value='Estado civil' />
                   </div>
-                  <Select
-                    name='estadoCivil'
-                    id='estadoCivil'
-                  >
+                  <Select name='estadoCivil' id='estadoCivil' helperText='Selectuki'>
                     <option value='' hidden>Selecciona tu estado civil</option>
                     <option value='Si'>Cornudo</option>
                     <option value='No'>Cornudon't</option>
@@ -133,6 +180,82 @@ const FormPage = () => {
                     </button>
                   </div>
                 </div>
+
+                <div className='mb-4'>
+                  <div className='mb-2 block dark:text-white'>
+                    <Label
+                      color='gray'
+                      htmlFor='checkbox'
+                      value='Checkbox'
+                    />
+                  </div>
+                  <div className='flex max-w-md flex-col gap-4' id='checkbox'>
+                    <div className='flex items-center gap-2'>
+                      <Checkbox id='accept' defaultChecked />
+                      <Label htmlFor='accept' className='flex'>
+                        Hola
+                      </Label>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Checkbox id='promotion' />
+                      <Label htmlFor='promotion'>Chau</Label>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Checkbox id='promotion' disabled />
+                      <Label htmlFor='promotion' disabled>Que onda</Label>
+                    </div>
+                  </div>
+                </div>
+
+                <div className='mb-4'>
+                  <div className='mb-2 block dark:text-white'>
+                    <Label
+                      color='gray'
+                      htmlFor='radio'
+                      value='Radio'
+                    />
+                  </div>
+                  <fieldset className='flex max-w-md flex-col gap-4'>
+                    <legend className='mb-4'>Elegí el mejor pais del mundo</legend>
+                    <div className='flex items-center gap-2'>
+                      <Radio id='argentina' name='countries' value='argentina' defaultChecked />
+                      <Label htmlFor='argentina'>Argentina</Label>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Radio id='argentina' name='countries' value='argentina' />
+                      <Label htmlFor='argentina'>Argentina</Label>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Radio id='argentina' name='countries' value='argentina' />
+                      <Label htmlFor='argentina'>Argentina</Label>
+                    </div>
+                    <div className='flex items-center gap-2'>
+                      <Radio id='francia' name='countries' value='francia' disabled />
+                      <Label htmlFor='francia' disabled>Francia</Label>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div id='fileUpload' className='max-w-md'>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='file' value='Subir un archivo' />
+                  </div>
+                  <FileInput id='file' helperText='Tu fotuki' />
+                </div>
+
+                <div className='mb-4'>
+                  <div className='mb-2 block dark:text-white'>
+                    <Label
+                      color='gray'
+                      htmlFor='textarea'
+                      value='Textarea'
+                    />
+                  </div>
+                  <div className='max-w-md'>
+                    <Textarea id='textarea' placeholder='A ver que sale' />
+                  </div>
+                </div>
+
               </div>
             </div>
 

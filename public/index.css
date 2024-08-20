@@ -204,5 +204,9 @@ h4 {
 }
 
 .force-visible {
-  display: block !important; /* Fuerza que el elemento se muestre */
+  display: block !important;
+}
+
+textarea {
+  field-sizing: content;
 }
