@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        'lg-custom': '1500px'
+        'lg-custom': '1536px'
       }
     }
   },

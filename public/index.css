@@ -202,3 +202,7 @@ h4 {
     color: #d1d5db;
   }
 }
+
+.force-visible {
+  display: block !important; /* Fuerza que el elemento se muestre */
+}

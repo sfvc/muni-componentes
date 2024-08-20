@@ -7,15 +7,13 @@ export function Layout () {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen)
+    setSidebarOpen(prevState => !prevState) // Usar función previa para asegurar el estado correcto
   }
 
   return (
     <div className='flex flex-col min-h-screen'>
       <DefaultNavbar toggleSidebar={toggleSidebar} />
-
       <DefaultSideBar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-
       <DefaultFooter />
     </div>
   )

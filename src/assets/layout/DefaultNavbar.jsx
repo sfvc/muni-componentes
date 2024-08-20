@@ -14,7 +14,10 @@ export function DefaultNavbar ({ toggleSidebar }) {
           <Flowbite className='navbar__muni'>
             <DarkThemeToggle className='dark:text-gray-400 text-white hover:bg-[#3ec2ff]' />
           </Flowbite>
-          <Navbar.Toggle onClick={toggleSidebar} className='dark:text-gray-400 text-white hover:bg-[#3ec2ff]' />
+          <Navbar.Toggle
+            onClick={toggleSidebar}
+            className='dark:text-gray-400 text-white hover:bg-[#3ec2ff] force-visible' // Aplica la clase para forzar su aparición
+          />
         </div>
       </Navbar>
     </div>
